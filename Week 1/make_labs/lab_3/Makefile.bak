@@ -1,0 +1,14 @@
+CC = gcc
+OPT = -g -O3
+WARN = -Wall
+CFLAGS = $(OPT) $(WARN)
+OBJECTS = data.o io.o main.o
+
+excer1: $(OBJECTS)
+	$(CC) $(CFLAGS) -o excer1 $(OBJECTS)
+
+clean:
+	@rm -f *.o core
+
+realclean:
+	@rm -f excer1# DO NOT DELETE
