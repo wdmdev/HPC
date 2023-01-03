@@ -8,10 +8,7 @@ distance(particle_t *p, int n) {
     double dist = 0.0;
 
     for (int i = 0; i < n; i++){
-        double x = p[i].x;
-        double y = p[i].y;
-        double z = p[i].z;
-        dist += sqrt(x * x + y * y + z * z);
+        dist += sqrt(p[i].x * p[i].x + p[i].y * p[i].y + p[i].z * p[i].z);
     }
 
     return dist;
@@ -23,10 +20,7 @@ distance(particle_t p, int n) {
     double dist = 0.0;
 
     for (int i = 0; i < n; i++){
-        double x = p.x[i];
-        double y = p.y[i];
-        double z = p.z[i];
-        dist += sqrt(x*x + y*y + z*z);
+        dist += sqrt(p.x[i]*p.x[i] + p.y[i]*p.y[i] + p.z[i]*p.z[i]);
     }
     
     return dist;
