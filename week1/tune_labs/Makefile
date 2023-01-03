@@ -1,5 +1,5 @@
 CC	= gcc
-OPT	= -g -O3 -std=c99
+OPT	= -g -O3 -std=c99 -funroll-loops
 CHIP	= 
 ISA	= 
 DEFS	= -DDATA_ANALYSIS 
