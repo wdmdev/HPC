@@ -1,0 +1,79 @@
+2) 
+##### CPU Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz ###
+32 cores
+CPU max MHz:           3900.0000
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              1024K
+L3 cache:              22528K
+Main memory:           792065308K
+
+
+##### GPU NVIDIA A100-PCIE-40GB #######
+(108) Multiprocessors, ( 64) CUDA Cores/MP:     6912 CUDA Cores
+L2 Cache Size:                                  41943040 bytes
+GPU Max Clock rate:                             1410 MHz (1.41 GHz)
+Total amount of global memory:                  40370 MBytes (42331013120 bytes)
+
+3)
+#####–memory=pageable
+[CUDA Bandwidth Test] - Starting...
+Running on...
+
+ Device 0: NVIDIA A100-PCIE-40GB
+ Quick Mode
+
+ Host to Device Bandwidth, 1 Device(s)
+ PAGEABLE Memory Transfers
+   Transfer Size (Bytes)        Bandwidth(MB/s)
+   33554432                     4311.9
+
+ Device to Host Bandwidth, 1 Device(s)
+ PAGEABLE Memory Transfers
+   Transfer Size (Bytes)        Bandwidth(MB/s)
+   33554432                     4369.2
+
+ Device to Device Bandwidth, 1 Device(s)
+ PAGEABLE Memory Transfers
+   Transfer Size (Bytes)        Bandwidth(MB/s)
+   33554432                     1040438.9
+
+Result = PASS
+
+
+## -memory=pinned
+NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
+
+[CUDA Bandwidth Test] - Starting...
+Running on...
+
+ Device 0: NVIDIA A100-PCIE-40GB
+ Quick Mode
+
+ Host to Device Bandwidth, 1 Device(s)
+ PINNED Memory Transfers
+   Transfer Size (Bytes)        Bandwidth(MB/s)
+   33554432                     11979.6
+
+ Device to Host Bandwidth, 1 Device(s)
+ PINNED Memory Transfers
+   Transfer Size (Bytes)        Bandwidth(MB/s)
+   33554432                     12841.0
+
+ Device to Device Bandwidth, 1 Device(s)
+ PINNED Memory Transfers
+   Transfer Size (Bytes)        Bandwidth(MB/s)
+   33554432                     1036857.1
+
+Result = PASS
+
+NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
+
+
+5)
+Device 0: "NVIDIA A100-PCIE-40GB".
+  Multiprocessors: 108
+MapSMtoCores for SM 8.0 is undefined.  Default to use 128 Cores/SM
+  Cores: 13824
+  Peak Memory Bandwidth (GB/s): 1555.200000
+  Maximum number of threads per block: 1024.
