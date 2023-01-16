@@ -2,6 +2,8 @@ TARGET= mandelbrot
 OBJS	= main.o \
         writepng.o \
         mandel_omp.o \
+		mandel.o \
+		warm.o
 
 OPT	= -g -fast -Msafeptr -Minfo -acc -mp=gpu -gpu=pinned -gpu=cc80 -gpu=lineinfo -cuda -mp=noautopar
 ISA	= 
@@ -22,7 +24,7 @@ CXXFLAGS= -I $(PNGWRTIPATH) $(OPT) $(ISA) $(PARA) $(XOPT)
 F90C  	= gfortran
 LIBS	= -L $(PNGWRTLPATH) -lpngwriter -lpng 
 
-all: $(PNGWRITERLIB) $(TARGET)
+all: $(PNGWRITERLIB) $(TARGET) 
 
 $(TARGET): $(OBJS) 
 	$(CXX) $(CXXFLAGS) -o $@ $(OBJS) $(LIBS)
@@ -41,6 +43,8 @@ realclean: clean
 
 # dependencies
 #
-main.o  : main.cpp mandel_omp.h
+main.o  : main.cpp mandel_omp.h mandel.h warm.h
+warm.o: warm.h
+mandel.o: mandel.cpp
 mandel_omp.o: mandel_omp.cpp
 writepng.o: writepng.h writepng.cc
